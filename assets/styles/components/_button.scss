@@ -1,0 +1,25 @@
+.button {
+  @include text-style($nunito, 1.0625rem, $white);
+
+  border: none;
+  border-radius: 0.625rem;
+
+  padding: 0.625rem 1rem;
+
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &--green {
+    background-color: $green;
+    &:hover {
+      background-color: $green-hover;
+    }
+  }
+
+  &--red {
+    background-color: $red;
+    &:hover {
+      background-color: $red-hover;
+    }
+  }
+}

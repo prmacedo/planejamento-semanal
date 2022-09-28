@@ -54,4 +54,27 @@ html {
   color: #333333;
   font-weight: 400;
   line-height: 1.25rem;
+}
+
+.button {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.0625rem;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.625rem 1rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.button--green {
+  background-color: #2CBE82;
+}
+.button--green:hover {
+  background-color: #26A671;
+}
+.button--red {
+  background-color: #DA2B40;
+}
+.button--red:hover {
+  background-color: #BF2638;
 }/*# sourceMappingURL=style.css.map */
