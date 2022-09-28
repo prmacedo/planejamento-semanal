@@ -1,0 +1,3 @@
+html {
+  @include text-style($poppins, 1rem, $text-color, 400, 1.25rem);
+}
