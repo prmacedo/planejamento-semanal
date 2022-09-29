@@ -70,87 +70,21 @@
     </form>
 
     <div class="board">
-      <ol class="time">
-        <li class="time__item">Horário</li>
-        <li class="time__item time__item--wednesday">10h30m</li>
-        <li class="time__item time__item--wednesday">11h00m</li>
-        <li class="time__item time__item--conflict">13h10m</li>
-        <li class="time__item time__item--wednesday">15h00m</li>
-        <li class="time__item time__item--wednesday">16h55m</li>
-        <li class="time__item time__item--wednesday">17h25m</li>
-        <li class="time__item time__item--wednesday">22h15m</li>
+      <ol class="time js-time">
+        <li class="time__title">Horário</li>
       </ol>
 
       <ol class="weekday">
-        <li class="weekday__item weekday__item--monday">Segunda-Feira</li>
-        <li class="weekday__item weekday__item--tuesday">Terça-Feira</li>
-        <li class="weekday__item weekday__item--wednesday weekday__item--active">Quarta-Feira</li>
-        <li class="weekday__item weekday__item--thursday">Quinta-Feira</li>
-        <li class="weekday__item weekday__item--friday">Sexta-Feira</li>
-        <li class="weekday__item weekday__item--saturday">Sábado</li>
-        <li class="weekday__item weekday__item--sunday">Domingo</li>
+        <li data-day="1" class="js-weekday__item weekday__item weekday__item--monday">Segunda-Feira</li>
+        <li data-day="2" class="js-weekday__item weekday__item weekday__item--tuesday">Terça-Feira</li>
+        <li data-day="3" class="js-weekday__item weekday__item weekday__item--wednesday">Quarta-Feira</li>
+        <li data-day="4" class="js-weekday__item weekday__item weekday__item--thursday">Quinta-Feira</li>
+        <li data-day="5" class="js-weekday__item weekday__item weekday__item--friday">Sexta-Feira</li>
+        <li data-day="6" class="js-weekday__item weekday__item weekday__item--saturday">Sábado</li>
+        <li data-day="0" class="js-weekday__item weekday__item weekday__item--sunday">Domingo</li>
       </ol>
 
-      <div class="schedule">
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-      </div>
+      <div class="schedule js-schedule"></div>
     </div>
   </main>
 

@@ -5,9 +5,25 @@
   flex-direction: column;
   gap: 8px;
 
-  &__item {
-    @include text-style($nunito, 1.0625rem, $input-text-color, 400);
+  &__title {
+    @include text-style($noto-sans, 1.0625rem, $input-text-color, 400);
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 4.6875rem;
+
+    background-color: $white;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: $shadow;
+    box-sizing: border-box;
+  }
+
+  &__item {
     display: flex;
     align-items: center;
     justify-content: center;
