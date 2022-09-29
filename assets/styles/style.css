@@ -136,6 +136,68 @@ body {
 
 .weekday {
   grid-area: weekday;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.weekday__item {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.0625rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.25rem;
+  padding: 6px 16px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  cursor: pointer;
+}
+.weekday__item:hover {
+  background-blend-mode: darken;
+}
+.weekday__item--active {
+  padding: 8px 32px;
+}
+.weekday__item--sunday {
+  background-color: #FF6666;
+}
+.weekday__item--sunday:hover {
+  background-color: #E65C5C;
+}
+.weekday__item--monday {
+  background-color: #FFA246;
+}
+.weekday__item--monday:hover {
+  background-color: #E6923E;
+}
+.weekday__item--tuesday {
+  background-color: #35E185;
+}
+.weekday__item--tuesday:hover {
+  background-color: #30C776;
+}
+.weekday__item--wednesday {
+  background-color: #6688FF;
+}
+.weekday__item--wednesday:hover {
+  background-color: #5C7AE6;
+}
+.weekday__item--thursday {
+  background-color: #B266FF;
+}
+.weekday__item--thursday:hover {
+  background-color: #A15CE6;
+}
+.weekday__item--friday {
+  background-color: #66D1FF;
+}
+.weekday__item--friday:hover {
+  background-color: #5CBCE6;
+}
+.weekday__item--saturday {
+  background-color: #FF66D4;
+}
+.weekday__item--saturday:hover {
+  background-color: #E65CBE;
 }
 
 .header {
