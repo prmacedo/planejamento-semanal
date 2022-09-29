@@ -1,0 +1,15 @@
+.input {
+  @include text-style($poppins, 0.875rem, $input-text-color, 400, 1.25rem);
+  padding: 0.75rem;
+
+  border-radius: 10px;
+  border: 1px solid $green;
+
+  box-sizing: border-box;
+
+  &--activity {
+    width: 424px;
+    margin-left: 48px;
+    padding-left: 5rem;
+  }
+}

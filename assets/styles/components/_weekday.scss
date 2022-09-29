@@ -1,0 +1,74 @@
+.weekday {
+  grid-area: weekday;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__item {
+    @include text-style($poppins, 1.0625rem, $white, 700, 1.25rem);
+
+    padding: 6px 16px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: $shadow;
+
+    cursor: pointer;
+
+    &:hover {
+      background-blend-mode: darken;
+    }
+
+    &--active {
+      padding: 8px 32px;
+    }
+
+    &--sunday {
+      background-color: $sunday;
+      &:hover {
+        background-color: $sunday-hover;
+      }
+    }
+
+    &--monday {
+      background-color: $monday;
+      &:hover {
+        background-color: $monday-hover;
+      }
+    }
+
+    &--tuesday {
+      background-color: $tuesday;
+      &:hover {
+        background-color: $tuesday-hover;
+      }
+    }
+
+    &--wednesday {
+      background-color: $wednesday;
+      &:hover {
+        background-color: $wednesday-hover;
+      }
+    }
+
+    &--thursday {
+      background-color: $thursday;
+      &:hover {
+        background-color: $thursday-hover;
+      }
+    }
+
+    &--friday {
+      background-color: $friday;
+      &:hover {
+        background-color: $friday-hover;
+      }
+    }
+
+    &--saturday {
+      background-color: $saturday;
+      &:hover {
+        background-color: $saturday-hover;
+      }
+    }
+  }
+}

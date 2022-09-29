@@ -9,6 +9,15 @@
   transition: background-color 0.3s;
   cursor: pointer;
 
+  i {
+    margin-right: 4px;
+  }
+
+  &--large {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   &--green {
     background-color: $green;
     &:hover {
@@ -20,6 +29,18 @@
     background-color: $red;
     &:hover {
       background-color: $red-hover;
+    }
+  }
+
+  &--darkred {
+    @include text-style($nunito, 0.875rem, $white);
+    background-color: $darkred;
+    padding: 0.25rem;
+    border-radius: 4px;
+    margin: 6px 6px 0 0;
+
+    &:hover {
+      background-color: $darkred-hover;
     }
   }
 }

@@ -1,0 +1,18 @@
+.select {
+  @include text-style($poppins, 0.875rem, $input-text-color, 400, 1.25rem);
+  padding: 0.75rem;
+  padding-right: 0.25rem;
+
+  border-radius: 10px;
+  border: 1px solid $green;
+
+  box-sizing: border-box;
+
+  &--weekday {
+    width: 210px;
+  }
+
+  &--time {
+    width: 100px;
+  }
+}

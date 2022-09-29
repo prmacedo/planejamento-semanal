@@ -56,6 +56,14 @@ html {
   line-height: 1.25rem;
 }
 
+body {
+  height: 100vh;
+  background-image: url(../images/background.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
 .button {
   font-family: "Nunito", sans-serif;
   font-size: 1.0625rem;
@@ -65,6 +73,13 @@ html {
   padding: 0.625rem 1rem;
   transition: background-color 0.3s;
   cursor: pointer;
+}
+.button i {
+  margin-right: 4px;
+}
+.button--large {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .button--green {
   background-color: #2CBE82;
@@ -78,6 +93,285 @@ html {
 .button--red:hover {
   background-color: #BF2638;
 }
+.button--darkred {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  background-color: #98031E;
+  padding: 0.25rem;
+  border-radius: 4px;
+  margin: 6px 6px 0 0;
+}
+.button--darkred:hover {
+  background-color: #800319;
+}
+
+.input {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  color: #3B3E45;
+  font-weight: 400;
+  line-height: 1.25rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #2CBE82;
+  box-sizing: border-box;
+}
+.input--activity {
+  width: 424px;
+  margin-left: 48px;
+  padding-left: 5rem;
+}
+
+.select {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  color: #3B3E45;
+  font-weight: 400;
+  line-height: 1.25rem;
+  padding: 0.75rem;
+  padding-right: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid #2CBE82;
+  box-sizing: border-box;
+}
+.select--weekday {
+  width: 210px;
+}
+.select--time {
+  width: 100px;
+}
+
+.time {
+  grid-area: time;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.time__item {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.0625rem;
+  color: #3B3E45;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.3125rem;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DCDFE3;
+  border-radius: 10px;
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  box-sizing: border-box;
+}
+.time__item:first-of-type {
+  font-family: "Noto Sans", sans-serif;
+  height: 4.6875rem;
+  border: none;
+}
+.time__item--conflict {
+  background-color: rgba(245, 93, 93, 0.4);
+  position: relative;
+}
+.time__item--conflict::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FF6D6D;
+}
+.time__item--conflict::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: calc(25% + 10px);
+  left: 16px;
+  width: 95vw;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #FF6D6D;
+}
+.time__item--sunday {
+  background-color: rgba(255, 102, 102, 0.4);
+}
+.time__item--monday {
+  background-color: rgba(255, 162, 70, 0.4);
+}
+.time__item--tuesday {
+  background-color: rgba(53, 225, 133, 0.4);
+}
+.time__item--wednesday {
+  background-color: rgba(102, 136, 255, 0.4);
+}
+.time__item--thursday {
+  background-color: rgba(178, 102, 255, 0.4);
+}
+.time__item--friday {
+  background-color: rgba(102, 209, 255, 0.4);
+}
+.time__item--saturday {
+  background-color: rgba(255, 102, 212, 0.4);
+}
+
+.schedule {
+  grid-area: schedule;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  padding-bottom: 23px;
+  transform: rotateX(180deg);
+  overflow-x: scroll;
+}
+.schedule__appoitment {
+  height: 5.3125rem;
+  transform: rotateX(180deg);
+  display: flex;
+  gap: 16px;
+}
+.schedule__appoitment:last-of-type {
+  padding-bottom: 24px;
+}
+.schedule__item {
+  flex-shrink: 0;
+  height: 100%;
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid #FFFFFF;
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  box-sizing: border-box;
+}
+.schedule__item::before {
+  content: "";
+  width: 14px;
+  height: 100%;
+  margin-left: 4px;
+  border-radius: 16px 0 0 16px;
+  box-sizing: border-box;
+}
+.schedule__item--conflict::before {
+  background-color: #F55D5D;
+}
+.schedule__item--sunday::before {
+  background-color: #FF6666;
+}
+.schedule__item--monday::before {
+  background-color: #FFA246;
+}
+.schedule__item--tuesday::before {
+  background-color: #35E185;
+}
+.schedule__item--wednesday::before {
+  background-color: #6688FF;
+}
+.schedule__item--thursday::before {
+  background-color: #B266FF;
+}
+.schedule__item--friday::before {
+  background-color: #66D1FF;
+}
+.schedule__item--saturday::before {
+  background-color: #FF66D4;
+}
+.schedule__text {
+  padding: 12px;
+  padding-right: 0;
+}
+.schedule::-webkit-scrollbar {
+  height: 8px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-track {
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-thumb {
+  background-color: #DCDFE3;
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-thumb:hover {
+  background-color: #C3C6C9;
+}
+.schedule::-webkit-scrollbar-thumb:active {
+  background-color: #9EA0A3;
+}
+.schedule .button {
+  align-self: flex-start;
+}
+
+.weekday {
+  grid-area: weekday;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.weekday__item {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.0625rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.25rem;
+  padding: 6px 16px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  cursor: pointer;
+}
+.weekday__item:hover {
+  background-blend-mode: darken;
+}
+.weekday__item--active {
+  padding: 8px 32px;
+}
+.weekday__item--sunday {
+  background-color: #FF6666;
+}
+.weekday__item--sunday:hover {
+  background-color: #E65C5C;
+}
+.weekday__item--monday {
+  background-color: #FFA246;
+}
+.weekday__item--monday:hover {
+  background-color: #E6923E;
+}
+.weekday__item--tuesday {
+  background-color: #35E185;
+}
+.weekday__item--tuesday:hover {
+  background-color: #30C776;
+}
+.weekday__item--wednesday {
+  background-color: #6688FF;
+}
+.weekday__item--wednesday:hover {
+  background-color: #5C7AE6;
+}
+.weekday__item--thursday {
+  background-color: #B266FF;
+}
+.weekday__item--thursday:hover {
+  background-color: #A15CE6;
+}
+.weekday__item--friday {
+  background-color: #66D1FF;
+}
+.weekday__item--friday:hover {
+  background-color: #5CBCE6;
+}
+.weekday__item--saturday {
+  background-color: #FF66D4;
+}
+.weekday__item--saturday:hover {
+  background-color: #E65CBE;
+}
 
 .header {
   display: flex;
@@ -86,7 +380,7 @@ html {
   background-color: #FFFFFF;
   padding: 32px 36px;
   padding-left: 0;
-  border-radius: 0 0 36px 36px;
+  margin-bottom: 22px;
   box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 .header__appName {
@@ -107,10 +401,6 @@ html {
   color: #FFFFFF;
   font-weight: 400;
 }
-.header__btnGroup {
-  display: flex;
-  gap: 16px;
-}
 .header__time {
   display: flex;
   flex-direction: column;
@@ -127,4 +417,46 @@ html {
   font-size: 1.25rem;
   color: #3B3E45;
   font-weight: 400;
+}
+
+.main {
+  overflow-y: auto;
+  height: calc(100vh - 146px - 24px);
+  margin-right: 1.5rem;
+}
+.main::-webkit-scrollbar {
+  width: 16px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+.main::-webkit-scrollbar-track {
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  border-radius: 8px;
+}
+.main::-webkit-scrollbar-thumb {
+  background-color: #DCDFE3;
+  border: 4px solid #FFFFFF;
+  border-radius: 8px;
+}
+.main::-webkit-scrollbar-thumb:hover {
+  background-color: #C3C6C9;
+}
+.main::-webkit-scrollbar-thumb:active {
+  background-color: #9EA0A3;
+}
+
+.form {
+  margin-left: 20px;
+  display: flex;
+  gap: 24px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 5.3125rem 1fr;
+  grid-template-rows: 2.25rem 1fr;
+  grid-template-areas: "time weekday" "time schedule";
+  gap: 16px;
+  padding: 1rem;
+  padding-right: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
