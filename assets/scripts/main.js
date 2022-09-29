@@ -140,6 +140,19 @@ weekdayList.forEach(weekdayItem => {
 
 initialActivitiesList();
 
+const deleteAllButton = document.querySelector('.js-deleteAll');
+deleteAllButton.addEventListener('click', deleteAllActivitiesOfTheDay);
+
+function deleteAllActivitiesOfTheDay() {
+  const weekdayActive = document.querySelector('.weekday__item--active');
+  const index = weekdayActive.getAttribute('data-day');
+
+  activityList[index] = [];
+
+  const modificator = getDayModificator(index);
+  listActivities(activityList[index], modificator);
+}
+
 function initialActivitiesList() {
   const currentWeekDay = new Date().getDay();
   const modificator = getDayModificator(currentWeekDay);
@@ -151,7 +164,6 @@ function initialActivitiesList() {
 }
 
 function selectDay(evt) {
-  clearBoard();
   removeWeekdayActive();
 
   const weekdayItem = evt.target;
@@ -178,6 +190,9 @@ function removeWeekdayActive() {
 }
 
 function listActivities(selectedActivities, modificator) {
+  clearBoard();
+
+  console.log(selectedActivities);
   selectedActivities.forEach(activity => {
     const timeItem = createTimeItem(activity, modificator)
     hourList.appendChild(timeItem);
