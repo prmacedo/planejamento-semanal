@@ -56,6 +56,14 @@ html {
   line-height: 1.25rem;
 }
 
+body {
+  height: 100vh;
+  background-image: url(../images/background.svg);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+}
+
 .button {
   font-family: "Nunito", sans-serif;
   font-size: 1.0625rem;
