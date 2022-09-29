@@ -9,7 +9,6 @@
   padding-left: 0;
   margin-bottom: 22px;
 
-  border-radius: 0 0 36px 36px;
   box-shadow: $shadow;
 
   &__appName {
@@ -25,11 +24,6 @@
 
   &__subtitle{
     @include text-style($poppins, 0.875rem, $white, 400);
-  }
-
-  &__btnGroup {
-    display: flex;
-    gap: 16px;
   }
 
   &__time {

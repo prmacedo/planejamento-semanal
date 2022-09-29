@@ -74,6 +74,9 @@ body {
   transition: background-color 0.3s;
   cursor: pointer;
 }
+.button i {
+  margin-right: 4px;
+}
 .button--large {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -115,8 +118,9 @@ body {
   box-sizing: border-box;
 }
 .input--activity {
-  padding-left: 5rem;
   width: 424px;
+  margin-left: 48px;
+  padding-left: 5rem;
 }
 
 .select {
@@ -377,7 +381,6 @@ body {
   padding: 32px 36px;
   padding-left: 0;
   margin-bottom: 22px;
-  border-radius: 0 0 36px 36px;
   box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
 .header__appName {
@@ -397,10 +400,6 @@ body {
   font-size: 0.875rem;
   color: #FFFFFF;
   font-weight: 400;
-}
-.header__btnGroup {
-  display: flex;
-  gap: 16px;
 }
 .header__time {
   display: flex;
@@ -450,9 +449,6 @@ body {
   margin-left: 20px;
   display: flex;
   gap: 24px;
-}
-.form .select--time {
-  margin-right: 18px;
 }
 
 .board {

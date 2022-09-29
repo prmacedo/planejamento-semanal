@@ -9,6 +9,10 @@
   transition: background-color 0.3s;
   cursor: pointer;
 
+  i {
+    margin-right: 4px;
+  }
+
   &--large {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
