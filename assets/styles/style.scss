@@ -11,8 +11,12 @@
 @import "./components/button";
 @import "./components/input";
 @import "./components/select";
+@import "./components/time";
+@import "./components/schedule";
+@import "./components/weekday";
 
 // Layout
 @import "./layout/header";
 @import "./layout/main";
 @import "./layout/form";
+@import "./layout/board";

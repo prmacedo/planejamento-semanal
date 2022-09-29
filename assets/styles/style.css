@@ -126,6 +126,18 @@ body {
   width: 100px;
 }
 
+.time {
+  grid-area: time;
+}
+
+.schedule {
+  grid-area: schedule;
+}
+
+.weekday {
+  grid-area: weekday;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -210,4 +222,14 @@ body {
 }
 .form .select--time {
   margin-right: 18px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 5.3125rem 1fr;
+  grid-template-rows: 2.25rem 1fr;
+  grid-template-areas: "time weekday" "time schedule";
+  gap: 16px;
+  padding: 1rem;
+  padding-right: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
