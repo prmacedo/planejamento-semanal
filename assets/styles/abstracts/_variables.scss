@@ -9,6 +9,9 @@ $input-text-color : #3B3E45;
 $gray             : #666E7D;
 $light-gray       : #DCDFE3;
 
+// Gradient
+$gradient: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
+
 // Weekdays colors
 $monday     : #FFA246;
 $tuesday    : #35E185;
@@ -46,3 +49,6 @@ $scrollbar-focus  : #9EA0A3;
 $poppins        : 'Poppins', sans-serif;
 $nunito         : 'Nunito', sans-serif;
 $noto-sans      : 'Noto Sans', sans-serif;
+
+// Box-shadow
+$shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);

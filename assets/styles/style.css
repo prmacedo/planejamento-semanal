@@ -213,6 +213,94 @@ body {
 
 .schedule {
   grid-area: schedule;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+  padding-bottom: 23px;
+  transform: rotateX(180deg);
+  overflow-x: scroll;
+}
+.schedule__appoitment {
+  height: 5.3125rem;
+  transform: rotateX(180deg);
+  display: flex;
+  gap: 16px;
+}
+.schedule__appoitment:last-of-type {
+  padding-bottom: 24px;
+}
+.schedule__item {
+  flex-shrink: 0;
+  height: 100%;
+  width: 40%;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid #FFFFFF;
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.3444) 0%, rgba(255, 255, 255, 0.336) 110.84%);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  box-sizing: border-box;
+}
+.schedule__item::before {
+  content: "";
+  width: 14px;
+  height: 100%;
+  margin-left: 4px;
+  border-radius: 16px 0 0 16px;
+  box-sizing: border-box;
+}
+.schedule__item--conflict::before {
+  background-color: #F55D5D;
+}
+.schedule__item--sunday::before {
+  background-color: #FF6666;
+}
+.schedule__item--monday::before {
+  background-color: #FFA246;
+}
+.schedule__item--tuesday::before {
+  background-color: #35E185;
+}
+.schedule__item--wednesday::before {
+  background-color: #6688FF;
+}
+.schedule__item--thursday::before {
+  background-color: #B266FF;
+}
+.schedule__item--friday::before {
+  background-color: #66D1FF;
+}
+.schedule__item--saturday::before {
+  background-color: #FF66D4;
+}
+.schedule__text {
+  padding: 12px;
+  padding-right: 0;
+}
+.schedule::-webkit-scrollbar {
+  height: 8px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-track {
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-thumb {
+  background-color: #DCDFE3;
+  border-radius: 8px;
+}
+.schedule::-webkit-scrollbar-thumb:hover {
+  background-color: #C3C6C9;
+}
+.schedule::-webkit-scrollbar-thumb:active {
+  background-color: #9EA0A3;
+}
+.schedule .button {
+  align-self: flex-start;
 }
 
 .weekday {

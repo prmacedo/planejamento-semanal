@@ -1,3 +1,133 @@
 .schedule {
   grid-area: schedule;
+
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 8px;
+
+  padding-bottom: 23px;
+
+  transform: rotateX(180deg);
+  overflow-x: scroll;
+
+  &__appoitment {
+    height: 5.3125rem;
+    transform: rotateX(180deg);
+
+    display: flex;
+    gap: 16px;
+
+    &:last-of-type {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+
+    border-radius: 16px;
+    border: 1px solid $white;
+    backdrop-filter: blur(10.5px);
+    box-shadow: $shadow;
+
+    background: $gradient;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      width: 14px;
+      height: 100%;
+      margin-left: 4px;
+      border-radius: 16px 0 0 16px;
+      box-sizing: border-box;
+    }
+
+    &--conflict {
+      &::before {
+        background-color: $conflict;
+      }
+    }
+
+    &--sunday {
+      &::before {
+        background-color: $sunday;
+      }
+    }
+
+    &--monday {
+      &::before {
+        background-color: $monday;
+      }
+    }
+
+    &--tuesday {
+      &::before {
+        background-color: $tuesday;
+      }
+    }
+
+    &--wednesday {
+      &::before {
+        background-color: $wednesday;
+      }
+    }
+
+    &--thursday {
+      &::before {
+        background-color: $thursday;
+      }
+    }
+
+    &--friday {
+      &::before {
+        background-color: $friday;
+      }
+    }
+
+    &--saturday {
+      &::before {
+        background-color: $saturday;
+      }
+    }
+  }
+
+  &__text {
+    padding: 12px;
+    padding-right: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: $white;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: $shadow;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: $scrollbar-hover;
+    }
+
+    &:active {
+      background-color: $scrollbar-focus;
+    }
+  }
+
+  .button {
+    align-self: flex-start;
+  }
 }
