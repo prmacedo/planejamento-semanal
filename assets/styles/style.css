@@ -90,6 +90,18 @@ body {
 .button--red:hover {
   background-color: #BF2638;
 }
+.button--darkred {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  color: #FFFFFF;
+  background-color: #98031E;
+  padding: 0.25rem;
+  border-radius: 4px;
+  margin: 6px 6px 0 0;
+}
+.button--darkred:hover {
+  background-color: #800319;
+}
 
 .input {
   font-family: "Poppins", sans-serif;
