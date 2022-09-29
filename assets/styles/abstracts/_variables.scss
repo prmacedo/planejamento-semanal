@@ -8,7 +8,6 @@ $text-color       : #333333;
 $input-text-color : #3B3E45;
 $gray             : #666E7D;
 
-
 // Weekdays colors
 $monday     : #FFA246;
 $tuesday    : #35E185;
@@ -29,6 +28,10 @@ $scroll-bg  : #FFFFFF;
 // Colors on Hover
 $green-hover      : #26A671;
 $red-hover        : #BF2638;
+$scrollbar-hover  : #C3C6C9;
+
+// Colors on focus
+$scrollbar-focus  : #9EA0A3;
 
 // Fonts
 $poppins        : 'Poppins', sans-serif;
