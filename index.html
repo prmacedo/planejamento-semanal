@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
@@ -32,5 +33,42 @@
       <time class="header__date">27 de Setembro de 2022</time>
     </div>
   </header>
+
+  <main class="main">
+    <form class="form">
+      <input type="text" name="activity" class="input input--activity" placeholder="Atividade">
+
+      <select name="weekday" id="weekday" class="select select--weekday">
+        <option value="0" class="form__option">Domingo</option>
+        <option value="1" class="form__option">Segunda-Feira</option>
+        <option value="2" class="form__option">Terça-Feira</option>
+        <option value="3" class="form__option">Quarta-Feira</option>
+        <option value="4" class="form__option">Quinta-Feira</option>
+        <option value="5" class="form__option">Sexta-Feira</option>
+        <option value="6" class="form__option">Sábado</option>
+      </select>
+
+      <select name="time" class="select select--time">
+        <option value="08h00m" class="form__option">08h00m</option>
+        <option value="08h30m" class="form__option">08h30m</option>
+        <option value="09h00m" class="form__option">09h00m</option>
+        <option value="09h30m" class="form__option">09h30m</option>
+        <option value="10h00m" class="form__option">10h00m</option>
+        <option value="10h30m" class="form__option">10h30m</option>
+        <option value="11h00m" class="form__option">11h00m</option>
+        <option value="11h30m" class="form__option">11h30m</option>
+        <option value="12h00m" class="form__option">12h00m</option>
+      </select>
+
+      <button class="button button--green button--large">
+        <i class="fa-solid fa-plus"></i>
+        Adicionar Atividade
+      </button>
+      <button class="button button--red button--large">
+        <i class="fa-solid fa-minus"></i>
+        Excluir Todos
+      </button>
+    </form>
+  </main>
 </body>
 </html>

@@ -9,6 +9,11 @@
   transition: background-color 0.3s;
   cursor: pointer;
 
+  &--large {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   &--green {
     background-color: $green;
     &:hover {
