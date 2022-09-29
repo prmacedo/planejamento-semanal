@@ -1,3 +1,90 @@
 .time {
   grid-area: time;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__item {
+    @include text-style($nunito, 1.0625rem, $input-text-color, 400);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 5.3125rem;
+    background-color: $white;
+
+    border-bottom: 1px solid $light-gray;
+    border-radius: 10px;
+
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    box-sizing: border-box;
+
+    &:first-of-type {
+      font-family: $noto-sans;
+      height: 4.6875rem;
+      border: none;
+    }
+
+    &--conflict {
+      background-color: rgba($color: $conflict, $alpha: 0.4);
+      position: relative;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 25%;
+        left: 4px;
+
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $conflict-line;
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        z-index: 1;
+        top: calc(25% + 10px);
+        left: 16px;
+
+        width: 95vw;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $conflict-line;
+      }
+    }
+
+    &--sunday {
+      background-color: rgba($color: $sunday, $alpha: 0.4);
+    }
+
+    &--monday {
+      background-color: rgba($color: $monday, $alpha: 0.4);
+    }
+
+    &--tuesday {
+      background-color: rgba($color: $tuesday, $alpha: 0.4);
+    }
+
+    &--wednesday {
+      background-color: rgba($color: $wednesday, $alpha: 0.4);
+    }
+
+    &--thursday {
+      background-color: rgba($color: $thursday, $alpha: 0.4);
+    }
+
+    &--friday {
+      background-color: rgba($color: $friday, $alpha: 0.4);
+    }
+
+    &--saturday {
+      background-color: rgba($color: $saturday, $alpha: 0.4);
+    }
+  }
 }
