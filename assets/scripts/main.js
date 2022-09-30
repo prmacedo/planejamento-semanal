@@ -145,22 +145,20 @@ deleteAllButton.addEventListener('click', deleteAllActivitiesOfTheDay);
 
 function deleteAllActivitiesOfTheDay() {
   const weekdayActive = document.querySelector('.weekday__item--active');
-  const index = weekdayActive.getAttribute('data-day');
+  const day = weekdayActive.getAttribute('data-day');
 
-  activityList[index] = [];
+  activityList[day] = [];
 
-  const modificator = getDayModificator(index);
-  listActivities(activityList[index], modificator);
+  listActivities(day);
 }
 
 function initialActivitiesList() {
   const currentWeekDay = new Date().getDay();
-  const modificator = getDayModificator(currentWeekDay);
 
   const weekdayItem = document.querySelector(`.weekday__item[data-day="${currentWeekDay}"]`);
   weekdayItem.classList.add('weekday__item--active');
 
-  listActivities(activityList[currentWeekDay], modificator);
+  listActivities(currentWeekDay);
 }
 
 function selectDay(evt) {
@@ -168,10 +166,9 @@ function selectDay(evt) {
 
   const weekdayItem = evt.target;
   const day = weekdayItem.getAttribute('data-day');
-  const modificator = getDayModificator(day);
 
   weekdayItem.classList.add('weekday__item--active');
-  listActivities(activityList[day], modificator);
+  listActivities(day);
 }
 
 function clearBoard() {
@@ -189,11 +186,18 @@ function removeWeekdayActive() {
   weekdayItem.classList.remove('weekday__item--active');
 }
 
-function listActivities(selectedActivities, modificator) {
+function getActivitiesByDay(day) {
+  return activityList[day];
+}
+
+function listActivities(day) {
   clearBoard();
 
-  console.log(selectedActivities);
-  selectedActivities.forEach(activity => {
+  const modificator = getDayModificator(day);
+  const activities = getActivitiesByDay(day);
+
+  console.log(activities);
+  activities.forEach(activity => {
     const timeItem = createTimeItem(activity, modificator)
     hourList.appendChild(timeItem);
 
