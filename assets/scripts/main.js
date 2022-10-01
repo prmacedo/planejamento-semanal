@@ -1,6 +1,8 @@
 import { Clock } from "./Clock.js";
+import { DOM } from "./DOM.js";
 
 new Clock();
+const objDOM = new DOM();
 
 // Board
 const activityList = [
@@ -105,9 +107,6 @@ const activityList = [
   ]  // Sábado
 ];
 
-const hourList = document.querySelector('.js-time');
-const scheduleList = document.querySelector('.js-schedule');
-
 const weekdayList = document.querySelectorAll('.js-weekday__item');
 weekdayList.forEach(weekdayItem => {
   weekdayItem.addEventListener('click', selectDay);
@@ -146,16 +145,6 @@ function selectDay(evt) {
   listActivities(day);
 }
 
-function clearBoard() {
-  const timeItem = document.querySelectorAll('.time__item');
-
-  timeItem.forEach(item => {
-    item.parentNode.removeChild(item);
-  });
-
-  scheduleList.innerHTML = '';
-}
-
 function removeWeekdayActive() {
   const weekdayItem = document.querySelector('.weekday__item--active');
   weekdayItem.classList.remove('weekday__item--active');
@@ -166,70 +155,18 @@ function getActivitiesByDay(day) {
 }
 
 function listActivities(day) {
-  clearBoard();
+  objDOM.clearBoard();
 
   const modificator = getDayModificator(day);
   const activities = getActivitiesByDay(day);
 
   console.log(activities);
   activities.forEach(activity => {
-    const timeItem = createTimeItem(activity, modificator)
-    hourList.appendChild(timeItem);
-
-    const scheduleAppointment = createScheduleAppointment();
-    const scheduleItem = createScheduleItem(modificator);
-    const scheduleText = createScheduleText(activity, modificator);
-    const button = createDarkredButton();
-
-    scheduleItem.appendChild(scheduleText);
-    scheduleItem.appendChild(button);
-    scheduleAppointment.appendChild(scheduleItem);
-    scheduleList.appendChild(scheduleAppointment);
+    objDOM.createBoardItem(activity, modificator)
   });
 }
 
 function getDayModificator(index) {
   const weekdays = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
   return weekdays[index];
-}
-
-function createTimeItem(activity, modificator) {
-  const timeItemClass = 'time__item--' + modificator;
-  const timeItem = document.createElement('li');
-  timeItem.classList.add('time__item', timeItemClass);
-  timeItem.textContent = activity.time;
-
-  return timeItem;
-}
-
-function createScheduleItem(modificator) {
-  const scheduleItemClass = 'schedule__item--' + modificator;
-  const scheduleItem = document.createElement('div');
-  scheduleItem.classList.add('schedule__item', scheduleItemClass);
-
-  return scheduleItem;
-}
-
-function createScheduleText(activity) {
-  const scheduleText = document.createElement('p');
-  scheduleText.classList.add('schedule__text');
-  scheduleText.textContent = activity.description;
-
-  return scheduleText;
-}
-
-function createScheduleAppointment() {
-  const scheduleAppointment = document.createElement('article');
-  scheduleAppointment.classList.add('schedule__appointment');
-
-  return scheduleAppointment;
-}
-
-function createDarkredButton() {
-  const button = document.createElement('button');
-  button.classList.add('button', 'button--darkred');
-  button.textContent = 'Apagar';
-  button.setAttribute('type', 'button');
-
-  return button;
 }
