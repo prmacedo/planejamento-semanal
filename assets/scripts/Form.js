@@ -1,7 +1,7 @@
 import { Activity } from "./Activity.js";
-import { Board } from "./Board.js";
+import { DOM } from "./DOM.js";
 
-const board = new Board();
+const myDOM = new DOM();
 
 class Form {
   constructor() {
@@ -27,7 +27,7 @@ class Form {
 
       Activity.addActivity(activity, day);
 
-      board.listActivities(day);
+      myDOM.listActivities(day);
     } else {
       alert('Preencha todos os campos corretamente!');
     }
