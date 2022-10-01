@@ -13,6 +13,43 @@ class Activity {
     this.#activityList[day] = [];
   }
 
+  static addActivity(activity, day) {
+    const id = this.#findLastId() + 1;
+    const newActivity = {
+      id,
+      ...activity
+    }
+
+    this.#activityList[day].push(newActivity);
+    this.#activityList[day].sort(this.#compareFn);
+  }
+
+  static #findLastId() {
+    let last_id = 0;
+
+    this.#activityList.forEach(day => {
+      day.forEach(activity => {
+        if(activity.id > last_id) {
+          last_id = activity.id;
+        }
+      })
+    });
+
+    return last_id;
+  }
+
+  static #compareFn(activityA, activityB) {
+    if (activityA.time < activityB.time) {
+      return -1;
+    }
+
+    if (activityA.time > activityB.time) {
+      return 1;
+    }
+
+    return 0;
+  }
+
   static #mockup() {
     return [
       [
@@ -109,7 +146,7 @@ class Activity {
       ], // Sexta
       [
         {
-          id: 12,
+          id: 18,
           description: 'Descanso',
           time: '20h30m'
         }

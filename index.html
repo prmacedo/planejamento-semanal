@@ -35,9 +35,9 @@
 
   <main class="main">
     <form class="form">
-      <input type="text" name="activity" class="input input--activity" placeholder="Atividade">
+      <input type="text" name="activity" class="input input--activity js-formActivity" placeholder="Atividade">
 
-      <select name="weekday" id="weekday" class="select select--weekday">
+      <select name="weekday" id="weekday" class="select select--weekday js-formWeekday">
         <option value="0" class="form__option">Domingo</option>
         <option value="1" class="form__option">Segunda-Feira</option>
         <option value="2" class="form__option">Terça-Feira</option>
@@ -47,7 +47,7 @@
         <option value="6" class="form__option">Sábado</option>
       </select>
 
-      <select name="time" class="select select--time">
+      <select name="time" class="select select--time js-formTime">
         <option value="08h00m" class="form__option">08h00m</option>
         <option value="08h30m" class="form__option">08h30m</option>
         <option value="09h00m" class="form__option">09h00m</option>
@@ -59,7 +59,7 @@
         <option value="12h00m" class="form__option">12h00m</option>
       </select>
 
-      <button class="button button--green button--large">
+      <button class="button button--green button--large js-submit" type="submit">
         <i class="fa-solid fa-plus"></i>
         Adicionar Atividade
       </button>
