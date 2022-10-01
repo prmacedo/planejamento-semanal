@@ -24,6 +24,13 @@ class Activity {
     this.#activityList[day].sort(this.#compareFn);
   }
 
+  static deleteActivityById(id, day) {
+    const index = this.#activityList[day].map(activity => activity.id).indexOf(id);
+
+    this.#activityList[day].splice(index, 1);
+  };
+
+
   static #findLastId() {
     let last_id = 0;
 

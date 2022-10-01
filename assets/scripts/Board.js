@@ -10,24 +10,13 @@ class Board {
     this.#addSelectDayEvent();
   }
 
-  listActivities(day) {
-    objDOM.clearBoard();
-
-    const modificator = this.#getDayModificator(day);
-    const activities = Activity.getActivitiesByDay(day);
-
-    activities.forEach(activity => {
-      objDOM.createBoardItem(activity, modificator)
-    });
-  }
-
   #initialActivitiesList() {
     const currentWeekDay = new Date().getDay();
 
     const weekdayItem = document.querySelector(`.weekday__item[data-day="${currentWeekDay}"]`);
     weekdayItem.classList.add('weekday__item--active');
 
-    this.listActivities(currentWeekDay);
+    objDOM.listActivities(currentWeekDay);
   }
 
   #addSelectDayEvent() {
@@ -48,7 +37,7 @@ class Board {
 
     Activity.deleteActivitiesByDay(day);
 
-    this.listActivities(day);
+    objDOM.listActivities(day);
   }
 
   #selectDay = (evt) => {
@@ -58,17 +47,12 @@ class Board {
     const day = weekdayItem.getAttribute('data-day');
 
     weekdayItem.classList.add('weekday__item--active');
-    this.listActivities(day);
+    objDOM.listActivities(day);
   }
 
   #removeWeekdayActive() {
     const weekdayItem = document.querySelector('.weekday__item--active');
     weekdayItem.classList.remove('weekday__item--active');
-  }
-
-  #getDayModificator(index) {
-    const weekdays = [ 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday' ];
-    return weekdays[index];
   }
 }
 
