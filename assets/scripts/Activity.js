@@ -2,7 +2,7 @@ class Activity {
   static #activityList;
 
   static {
-    Activity.#activityList = this.#mockup();
+    this.#activityList = this.#initalizeData();
     this.saveInLocalStorage = this.saveInLocalStorage.bind(this);
     this.clearLocalStorage = this.clearLocalStorage.bind(this);
   }
@@ -39,6 +39,13 @@ class Activity {
   static clearLocalStorage() {
     localStorage.clear();
     this.#activityList = [[], [], [], [], [], [], []];
+  }
+
+  static #initalizeData() {
+    const activities = JSON.parse(localStorage.getItem("activities"));
+    const empty = [[], [], [], [], [], [], []];
+
+    return activities || empty;
   }
 
   static #findLastId() {
