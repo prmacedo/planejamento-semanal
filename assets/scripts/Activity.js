@@ -4,6 +4,7 @@ class Activity {
   static {
     Activity.#activityList = this.#mockup();
     this.saveInLocalStorage = this.saveInLocalStorage.bind(this);
+    this.clearLocalStorage = this.clearLocalStorage.bind(this);
   }
 
   static getActivitiesByDay(day) {
@@ -33,6 +34,11 @@ class Activity {
 
   static saveInLocalStorage() {
     localStorage.setItem("activities", JSON.stringify(this.#activityList));
+  }
+
+  static clearLocalStorage() {
+    localStorage.clear();
+    this.#activityList = [[], [], [], [], [], [], []];
   }
 
   static #findLastId() {
