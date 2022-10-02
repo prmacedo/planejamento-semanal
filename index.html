@@ -23,21 +23,21 @@
       <p class="header__subtitle">Utilize o formulário para adicionar novas tarefas:</p>
     </div>
 
-    <button class="button button--green">Salvar localStorage</button>
+    <button class="button button--green js-saveLocalStorage">Salvar localStorage</button>
 
-    <button class="button button--red">Excluir localStorage</button>
+    <button class="button button--red js-deleteLocalStorage">Excluir localStorage</button>
 
-    <div class="header__time">
-      <time class="header__hour">10:58</time>
-      <time class="header__date">27 de Setembro de 2022</time>
+    <div class="header__time js-clock">
+      <time class="header__hour js-clock__hour">10:58</time>
+      <time class="header__date js-clock__date">27 de Setembro de 2022</time>
     </div>
   </header>
 
   <main class="main">
     <form class="form">
-      <input type="text" name="activity" class="input input--activity" placeholder="Atividade">
+      <input type="text" name="activity" class="input input--activity js-formActivity" placeholder="Atividade">
 
-      <select name="weekday" id="weekday" class="select select--weekday">
+      <select name="weekday" id="weekday" class="select select--weekday js-formWeekday">
         <option value="0" class="form__option">Domingo</option>
         <option value="1" class="form__option">Segunda-Feira</option>
         <option value="2" class="form__option">Terça-Feira</option>
@@ -47,7 +47,7 @@
         <option value="6" class="form__option">Sábado</option>
       </select>
 
-      <select name="time" class="select select--time">
+      <select name="time" class="select select--time js-formTime">
         <option value="08h00m" class="form__option">08h00m</option>
         <option value="08h30m" class="form__option">08h30m</option>
         <option value="09h00m" class="form__option">09h00m</option>
@@ -59,99 +59,35 @@
         <option value="12h00m" class="form__option">12h00m</option>
       </select>
 
-      <button class="button button--green button--large">
+      <button class="button button--green button--large js-submit" type="submit">
         <i class="fa-solid fa-plus"></i>
         Adicionar Atividade
       </button>
-      <button class="button button--red button--large">
+      <button class="button button--red button--large js-deleteAll" type="button">
         <i class="fa-solid fa-minus"></i>
         Excluir Todos
       </button>
     </form>
 
     <div class="board">
-      <ol class="time">
-        <li class="time__item">Horário</li>
-        <li class="time__item time__item--wednesday">10h30m</li>
-        <li class="time__item time__item--wednesday">11h00m</li>
-        <li class="time__item time__item--conflict">13h10m</li>
-        <li class="time__item time__item--wednesday">15h00m</li>
-        <li class="time__item time__item--wednesday">16h55m</li>
-        <li class="time__item time__item--wednesday">17h25m</li>
-        <li class="time__item time__item--wednesday">22h15m</li>
+      <ol class="time js-time">
+        <li class="time__title">Horário</li>
       </ol>
 
       <ol class="weekday">
-        <li class="weekday__item weekday__item--monday">Segunda-Feira</li>
-        <li class="weekday__item weekday__item--tuesday">Terça-Feira</li>
-        <li class="weekday__item weekday__item--wednesday weekday__item--active">Quarta-Feira</li>
-        <li class="weekday__item weekday__item--thursday">Quinta-Feira</li>
-        <li class="weekday__item weekday__item--friday">Sexta-Feira</li>
-        <li class="weekday__item weekday__item--saturday">Sábado</li>
-        <li class="weekday__item weekday__item--sunday">Domingo</li>
+        <li data-day="1" class="js-weekday__item weekday__item weekday__item--monday">Segunda-Feira</li>
+        <li data-day="2" class="js-weekday__item weekday__item weekday__item--tuesday">Terça-Feira</li>
+        <li data-day="3" class="js-weekday__item weekday__item weekday__item--wednesday">Quarta-Feira</li>
+        <li data-day="4" class="js-weekday__item weekday__item weekday__item--thursday">Quinta-Feira</li>
+        <li data-day="5" class="js-weekday__item weekday__item weekday__item--friday">Sexta-Feira</li>
+        <li data-day="6" class="js-weekday__item weekday__item weekday__item--saturday">Sábado</li>
+        <li data-day="0" class="js-weekday__item weekday__item weekday__item--sunday">Domingo</li>
       </ol>
 
-      <div class="schedule">
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-
-          <div class="schedule__item schedule__item--conflict">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Descanso</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-
-        <article class="schedule__appoitment">
-          <div class="schedule__item schedule__item--wednesday">
-            <p class="schedule__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <button class="button button--darkred">Apagar</button>
-          </div>
-        </article>
-      </div>
+      <div class="schedule js-schedule"></div>
     </div>
   </main>
+
+  <script type="module" src="./assets/scripts/main.js"></script>
 </body>
 </html>
