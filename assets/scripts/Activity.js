@@ -3,6 +3,7 @@ class Activity {
 
   static {
     Activity.#activityList = this.#mockup();
+    this.saveInLocalStorage = this.saveInLocalStorage.bind(this);
   }
 
   static getActivitiesByDay(day) {
@@ -30,6 +31,9 @@ class Activity {
     this.#activityList[day].splice(index, 1);
   };
 
+  static saveInLocalStorage() {
+    localStorage.setItem("activities", JSON.stringify(this.#activityList));
+  }
 
   static #findLastId() {
     let last_id = 0;
