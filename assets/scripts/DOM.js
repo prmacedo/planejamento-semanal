@@ -12,11 +12,11 @@ class DOM {
   listActivities(day) {
     this.clearBoard();
 
-    const activities = Activity.getActivitiesByDay(day);
+    const activities = [...Activity.getActivitiesByDay(day)];
 
-    activities.forEach(activity => {
-      this.createBoardItem(activity, day)
-    });
+    const activitiesByTime = this.#groupActivitiesByTime(activities);
+
+    this.createBoardItems(activitiesByTime, day);
   }
 
   clearBoard() {
@@ -29,21 +29,43 @@ class DOM {
     this.#scheduleList.innerHTML = '';
   }
 
-  createBoardItem(activity, day) {
-    const modificator = this.#getDayModificator(day);
+  createBoardItems(activitiesByTime, day) {
+    let timeItem;
+    let scheduleAppointment;
 
-    const timeItem = this.#createTimeItem(activity, modificator)
-    this.#hourList.appendChild(timeItem);
+    for(const timeGroup in activitiesByTime) {
+      const items = activitiesByTime[timeGroup];
+      const modificator = (items.length > 1) ? 'conflict': this.#getDayModificator(day);
 
-    const scheduleAppointment = this.#createScheduleAppointment();
-    const scheduleItem = this.#createScheduleItem(modificator);
-    const scheduleText = this.#createScheduleText(activity, modificator);
-    const button = this.#createDarkredButton(activity.id, day);
+      items.forEach((activity, index) => {
+        if (index === 0) {
+          timeItem = this.#createTimeItem(activity, modificator);
+          this.#hourList.appendChild(timeItem);
 
-    scheduleItem.appendChild(scheduleText);
-    scheduleItem.appendChild(button);
-    scheduleAppointment.appendChild(scheduleItem);
-    this.#scheduleList.appendChild(scheduleAppointment);
+          scheduleAppointment = this.#createScheduleAppointment();
+        }
+
+        const scheduleItem = this.#createScheduleItem(modificator);
+        const scheduleText = this.#createScheduleText(activity, modificator);
+        const button = this.#createDarkredButton(activity.id, day);
+
+        scheduleItem.appendChild(scheduleText);
+        scheduleItem.appendChild(button);
+        scheduleAppointment.appendChild(scheduleItem);
+        this.#scheduleList.appendChild(scheduleAppointment);
+      });
+    }
+  }
+
+  #groupActivitiesByTime(activities) {
+    return activities.reduce((group, current) => {
+      const time = current.time;
+
+      group[time] = group[time] || [];
+
+      group[time].push(current);
+      return group;
+    }, {});
   }
 
   #createTimeItem(activity, modificator) {
