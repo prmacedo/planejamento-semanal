@@ -131,6 +131,7 @@ body {
   border-radius: 10px;
   border: 1px solid #2CBE82;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .select--weekday {
   width: 210px;
