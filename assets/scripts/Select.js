@@ -74,6 +74,7 @@ class Select {
     this.#time.hours.textContent = label;
     this.#time.input.value = label + "00m"
 
+    this.#time.minutes.value = "00"
     this.#time.minutes.setSelectionRange(2,2);
     this.#time.minutes.focus();
 
