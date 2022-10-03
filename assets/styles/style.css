@@ -122,6 +122,13 @@ body {
   margin-left: 48px;
   padding-left: 5rem;
 }
+@media (max-width: 1320px) {
+  .input--activity {
+    width: auto;
+    margin-left: 0;
+    padding-left: 0.75rem;
+  }
+}
 
 .select {
   position: relative;
@@ -134,7 +141,13 @@ body {
   cursor: pointer;
 }
 .select--weekday {
-  width: 210px;
+  width: 100%;
+  max-width: 200px;
+}
+@media (max-width: 1320px) {
+  .select--weekday {
+    width: auto;
+  }
 }
 .select--time .select__field {
   display: flex;

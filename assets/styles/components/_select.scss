@@ -12,7 +12,12 @@
   }
 
   &--weekday {
-    width: 210px;
+    width: 100%;
+    max-width: 200px;
+
+    @include breakpoint(laptop) {
+      width: auto;
+    }
   }
 
   &--time {
