@@ -462,6 +462,10 @@ body {
   color: #FFFFFF;
   font-weight: 400;
 }
+.header__btnGroup {
+  display: flex;
+  gap: 20px;
+}
 .header__time {
   display: flex;
   flex-direction: column;

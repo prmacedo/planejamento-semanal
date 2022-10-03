@@ -26,6 +26,11 @@
     @include text-style($poppins, 0.875rem, $white, 400);
   }
 
+  &__btnGroup {
+    display: flex;
+    gap: 20px;
+  }
+
   &__time {
     display: flex;
     flex-direction: column;
