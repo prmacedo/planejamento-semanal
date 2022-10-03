@@ -20,6 +20,8 @@ class Select {
 
     this.#addClickEvent();
     this.#addChangeEvent();
+
+    document.addEventListener("click", this.#hideAllOptions);
   }
 
   #addClickEvent() {
@@ -105,6 +107,15 @@ class Select {
     const minutes = this.#time.minutes.value + 'm';
 
     this.#time.input.value = hours + minutes;
+  }
+
+  #hideAllOptions = (evt) => {
+    const classList = evt.target.getAttribute("class") || '';
+
+    if(!classList.includes("select__")){
+      this.#removeOptions('.js-weekdaySelect');
+      this.#removeOptions('.js-timeSelect');
+    }
   }
 }
 
