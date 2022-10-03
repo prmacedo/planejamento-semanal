@@ -124,13 +124,10 @@ body {
 }
 
 .select {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  color: #3B3E45;
-  font-weight: 400;
-  line-height: 1.25rem;
+  position: relative;
+}
+.select__field {
   padding: 0.75rem;
-  padding-right: 0.25rem;
   border-radius: 10px;
   border: 1px solid #2CBE82;
   box-sizing: border-box;
@@ -138,8 +135,46 @@ body {
 .select--weekday {
   width: 210px;
 }
-.select--time {
-  width: 100px;
+.select__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+  color: #3B3E45;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+.select__icon {
+  font-size: 0.75rem;
+  color: #666E7D;
+  margin-left: 8px;
+}
+.select__options {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  margin-top: 8px;
+  padding: 0.5rem 0;
+  background-color: #FFFFFF;
+  border: 1px solid #2CBE82;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.select__options--time {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.select__options--hidden {
+  display: none;
+}
+.select__item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.select__item:hover {
+  background-color: #DCDFE3;
 }
 
 .time {

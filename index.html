@@ -37,27 +37,60 @@
     <form class="form">
       <input type="text" name="activity" class="input input--activity js-formActivity" placeholder="Atividade">
 
-      <select name="weekday" id="weekday" class="select select--weekday js-formWeekday">
-        <option value="0" class="form__option">Domingo</option>
-        <option value="1" class="form__option">Segunda-Feira</option>
-        <option value="2" class="form__option">Terça-Feira</option>
-        <option value="3" class="form__option">Quarta-Feira</option>
-        <option value="4" class="form__option">Quinta-Feira</option>
-        <option value="5" class="form__option">Sexta-Feira</option>
-        <option value="6" class="form__option">Sábado</option>
-      </select>
+      <input type="hidden" name="weekday" class="js-formWeekday">
 
-      <select name="time" class="select select--time js-formTime">
-        <option value="08h00m" class="form__option">08h00m</option>
-        <option value="08h30m" class="form__option">08h30m</option>
-        <option value="09h00m" class="form__option">09h00m</option>
-        <option value="09h30m" class="form__option">09h30m</option>
-        <option value="10h00m" class="form__option">10h00m</option>
-        <option value="10h30m" class="form__option">10h30m</option>
-        <option value="11h00m" class="form__option">11h00m</option>
-        <option value="11h30m" class="form__option">11h30m</option>
-        <option value="12h00m" class="form__option">12h00m</option>
-      </select>
+      <div class="select select--weekday">
+        <div class="select__field">
+          <span class="select__text">Domingo</span>
+          <i class="fa-solid fa-chevron-down select__icon"></i>
+        </div>
+
+        <ol class="select__options select__options--hidden">
+          <li class="select__item">Domingo</li>
+          <li class="select__item">Segunda-Feira</li>
+          <li class="select__item">Terça-Feira</li>
+          <li class="select__item">Quarta-Feira</li>
+          <li class="select__item">Quinta-Feira</li>
+          <li class="select__item">Sexta-Feira</li>
+          <li class="select__item">Sábado</li>
+        </ol>
+      </div>
+
+      <input type="hidden" name="time" class="js-formTime">
+
+      <div class="select select--time">
+        <div class="select__field">
+          <span class="select__text">00h00m</span>
+          <i class="fa-solid fa-chevron-down select__icon"></i>
+        </div>
+
+        <ol class="select__options select__options--time select__options--hidden">
+          <li class="select__item">00h</li>
+          <li class="select__item">01h</li>
+          <li class="select__item">02h</li>
+          <li class="select__item">03h</li>
+          <li class="select__item">04h</li>
+          <li class="select__item">05h</li>
+          <li class="select__item">06h</li>
+          <li class="select__item">07h</li>
+          <li class="select__item">08h</li>
+          <li class="select__item">09h</li>
+          <li class="select__item">10h</li>
+          <li class="select__item">11h</li>
+          <li class="select__item">12h</li>
+          <li class="select__item">13h</li>
+          <li class="select__item">14h</li>
+          <li class="select__item">15h</li>
+          <li class="select__item">16h</li>
+          <li class="select__item">17h</li>
+          <li class="select__item">18h</li>
+          <li class="select__item">19h</li>
+          <li class="select__item">20h</li>
+          <li class="select__item">21h</li>
+          <li class="select__item">22h</li>
+          <li class="select__item">23h</li>
+        </ol>
+      </div>
 
       <button class="button button--green button--large js-submit" type="submit">
         <i class="fa-solid fa-plus"></i>
