@@ -15,8 +15,25 @@
     width: 210px;
   }
 
+  &--time {
+    .select__field {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__text {
     @include text-style($poppins, 0.875rem, $input-text-color, 400, 1.25rem);
+
+    &--time {
+      border: none;
+      padding: 0;
+      margin: 0;
+      margin-left: 2px;
+      background-color: transparent;
+      width: 2ch;
+      outline: none;
+    }
   }
 
   &__icon {
