@@ -70,16 +70,34 @@ body {
   color: #FFFFFF;
   border: none;
   border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.625rem 1rem;
   transition: background-color 0.3s;
   cursor: pointer;
 }
+@media (max-width: 1024px) {
+  .button__text {
+    display: none;
+  }
+}
 .button i {
   margin-right: 4px;
+}
+@media (max-width: 1024px) {
+  .button i {
+    margin: 0;
+  }
 }
 .button--large {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+@media (max-width: 1024px) {
+  .button--large {
+    padding: 1rem;
+  }
 }
 .button--green {
   background-color: #2CBE82;
@@ -568,6 +586,11 @@ body {
   margin-left: 20px;
   display: flex;
   gap: 24px;
+}
+@media (max-width: 1024px) {
+  .form {
+    gap: 12px;
+  }
 }
 
 .board {
