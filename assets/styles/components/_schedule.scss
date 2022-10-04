@@ -99,8 +99,34 @@
   }
 
   &__text {
-    padding: 12px;
-    padding-right: 0;
+    margin: 8px;
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: $white;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: $shadow;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scrollbar;
+      border: 2px solid $white;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: $scrollbar-hover;
+      }
+
+      &:active {
+        background-color: $scrollbar-focus;
+      }
+    }
   }
 
   &::-webkit-scrollbar {
