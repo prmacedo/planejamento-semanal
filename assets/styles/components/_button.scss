@@ -13,6 +13,10 @@
   transition: background-color 0.3s;
   cursor: pointer;
 
+  @include breakpoint(tablet) {
+    padding: 0.25rem 1rem;
+  }
+
   &__text {
     @include breakpoint(tablet) {
       display: none;

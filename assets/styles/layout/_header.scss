@@ -11,6 +11,11 @@
 
   box-shadow: $shadow;
 
+  @include breakpoint(tablet) {
+    padding: 8px;
+    padding-left: 0;
+  }
+
   &__appName {
     width: 588px;
     background-color: $primary;
@@ -19,6 +24,10 @@
 
     @include breakpoint(laptop) {
       width: auto;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 1rem 1.5rem;
     }
   }
 
@@ -37,6 +46,10 @@
     @include breakpoint(laptop) {
       gap: 4px;
     }
+
+    @include breakpoint(tablet) {
+      flex-direction: column;
+    }
   }
 
   &__time {
@@ -47,9 +60,17 @@
 
   &__hour {
     @include text-style($poppins, 2.5rem, $input-text-color, 400);
+
+    @include breakpoint(tablet) {
+      font-size: 2rem;
+    }
   }
 
   &__date {
     @include text-style($poppins, 1.25rem, $input-text-color, 400);
+
+    @include breakpoint(tablet) {
+      font-size: 1rem;
+    }
   }
 }
