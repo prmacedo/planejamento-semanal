@@ -16,6 +16,10 @@
     background-color: $primary;
     padding: 0.625rem 1.5rem;
     border-radius: 0 1rem 1rem 0;
+
+    @include breakpoint(laptop) {
+      width: auto;
+    }
   }
 
   &__title {
@@ -29,6 +33,10 @@
   &__btnGroup {
     display: flex;
     gap: 20px;
+
+    @include breakpoint(laptop) {
+      gap: 4px;
+    }
   }
 
   &__time {

@@ -474,6 +474,11 @@ body {
   padding: 0.625rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
 }
+@media (max-width: 1320px) {
+  .header__appName {
+    width: auto;
+  }
+}
 .header__title {
   font-family: "Poppins", sans-serif;
   font-size: 1.375rem;
@@ -489,6 +494,11 @@ body {
 .header__btnGroup {
   display: flex;
   gap: 20px;
+}
+@media (max-width: 1320px) {
+  .header__btnGroup {
+    gap: 4px;
+  }
 }
 .header__time {
   display: flex;
