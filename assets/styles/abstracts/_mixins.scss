@@ -5,3 +5,17 @@
   @if $weight { font-weight: $weight; }
   @if $lh { line-height: $lh; }
 }
+
+@mixin breakpoint($point) {
+  @if $point == laptop {
+    @media (max-width: 1320px) {
+      @content;
+    }
+  }
+
+  @else if $point == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+}

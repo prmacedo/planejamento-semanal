@@ -11,5 +11,11 @@
     width: 424px;
     margin-left: 48px;
     padding-left: 5rem;
+
+    @include breakpoint(laptop) {
+      width: auto;
+      margin-left: 0;
+      padding-left: 0.75rem;
+    }
   }
 }

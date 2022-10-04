@@ -23,9 +23,10 @@
       <p class="header__subtitle">Utilize o formulário para adicionar novas tarefas:</p>
     </div>
 
-    <button class="button button--green js-saveLocalStorage">Salvar localStorage</button>
-
-    <button class="button button--red js-deleteLocalStorage">Excluir localStorage</button>
+    <div class="header__btnGroup">
+      <button class="button button--green js-saveLocalStorage">Salvar localStorage</button>
+      <button class="button button--red js-deleteLocalStorage">Excluir localStorage</button>
+    </div>
 
     <div class="header__time js-clock">
       <time class="header__hour js-clock__hour">10:58</time>
@@ -94,13 +95,14 @@
         </ol>
       </div>
 
-      <button class="button button--green button--large js-submit" type="submit">
-        <i class="fa-solid fa-plus"></i>
-        Adicionar Atividade
+      <button class="button button--green button--large js-submit" type="submit" title="Adicionar Atividade">
+        <i class="fa-solid fa-plus" aria-label="Adicionar Atividade"></i>
+        <span class="button__text">Adicionar Atividade</span>
       </button>
-      <button class="button button--red button--large js-deleteAll" type="button">
-        <i class="fa-solid fa-minus"></i>
-        Excluir Todos
+
+      <button class="button button--red button--large js-deleteAll" type="button" title="Excluir Todos">
+        <i class="fa-solid fa-minus" aria-label="Excluir Todos"></i>
+        <span class="button__text">Excluir Todos</span>
       </button>
     </form>
 
@@ -110,13 +112,13 @@
       </ol>
 
       <ol class="weekday">
-        <li data-day="1" class="js-weekday__item weekday__item weekday__item--monday">Segunda-Feira</li>
-        <li data-day="2" class="js-weekday__item weekday__item weekday__item--tuesday">Terça-Feira</li>
-        <li data-day="3" class="js-weekday__item weekday__item weekday__item--wednesday">Quarta-Feira</li>
-        <li data-day="4" class="js-weekday__item weekday__item weekday__item--thursday">Quinta-Feira</li>
-        <li data-day="5" class="js-weekday__item weekday__item weekday__item--friday">Sexta-Feira</li>
-        <li data-day="6" class="js-weekday__item weekday__item weekday__item--saturday">Sábado</li>
-        <li data-day="0" class="js-weekday__item weekday__item weekday__item--sunday">Domingo</li>
+        <li data-day="1" title="Segunda-Feira" class="js-weekday__item weekday__item weekday__item--monday">Segunda<span class="weekday__text">-Feira</span></li>
+        <li data-day="2" title="Terça-Feira" class="js-weekday__item weekday__item weekday__item--tuesday">Terça<span class="weekday__text">-Feira</span></li>
+        <li data-day="3" title="Quarta-Feira" class="js-weekday__item weekday__item weekday__item--wednesday">Quarta<span class="weekday__text">-Feira</span></li>
+        <li data-day="4" title="Quinta-Feira" class="js-weekday__item weekday__item weekday__item--thursday">Quinta<span class="weekday__text">-Feira</span></li>
+        <li data-day="5" title="Sexta-Feira" class="js-weekday__item weekday__item weekday__item--friday">Sexta<span class="weekday__text">-Feira</span></li>
+        <li data-day="6" title="Sábado" class="js-weekday__item weekday__item weekday__item--saturday">Sábado</li>
+        <li data-day="0" title="Domingo" class="js-weekday__item weekday__item weekday__item--sunday">Domingo</li>
       </ol>
 
       <div class="schedule js-schedule"></div>

@@ -70,16 +70,39 @@ body {
   color: #FFFFFF;
   border: none;
   border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.625rem 1rem;
   transition: background-color 0.3s;
   cursor: pointer;
 }
+@media (max-width: 1023px) {
+  .button {
+    padding: 0.25rem 1rem;
+  }
+}
+@media (max-width: 1023px) {
+  .button__text {
+    display: none;
+  }
+}
 .button i {
   margin-right: 4px;
+}
+@media (max-width: 1023px) {
+  .button i {
+    margin: 0;
+  }
 }
 .button--large {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+@media (max-width: 1023px) {
+  .button--large {
+    padding: 1rem;
+  }
 }
 .button--green {
   background-color: #2CBE82;
@@ -122,6 +145,13 @@ body {
   margin-left: 48px;
   padding-left: 5rem;
 }
+@media (max-width: 1320px) {
+  .input--activity {
+    width: auto;
+    margin-left: 0;
+    padding-left: 0.75rem;
+  }
+}
 
 .select {
   position: relative;
@@ -134,7 +164,13 @@ body {
   cursor: pointer;
 }
 .select--weekday {
-  width: 210px;
+  width: 100%;
+  max-width: 200px;
+}
+@media (max-width: 1320px) {
+  .select--weekday {
+    width: auto;
+  }
 }
 .select--time .select__field {
   display: flex;
@@ -248,7 +284,7 @@ body {
   z-index: 1;
   top: calc(25% + 10px);
   left: 16px;
-  width: 95vw;
+  width: calc(100vw - 36px - 24px - 16px - 8px);
   height: 4px;
   border-radius: 2px;
   background-color: #FF6D6D;
@@ -341,8 +377,28 @@ body {
   background-color: #FF66D4;
 }
 .schedule__text {
-  padding: 12px;
-  padding-right: 0;
+  margin: 8px;
+  overflow-y: auto;
+}
+.schedule__text::-webkit-scrollbar {
+  width: 8px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+}
+.schedule__text::-webkit-scrollbar-track {
+  box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+  border-radius: 4px;
+}
+.schedule__text::-webkit-scrollbar-thumb {
+  background-color: #DCDFE3;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+}
+.schedule__text::-webkit-scrollbar-thumb:hover {
+  background-color: #C3C6C9;
+}
+.schedule__text::-webkit-scrollbar-thumb:active {
+  background-color: #9EA0A3;
 }
 .schedule::-webkit-scrollbar {
   height: 8px;
@@ -385,11 +441,32 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+@media (max-width: 1320px) {
+  .weekday__item {
+    font-size: 1rem;
+    padding: 4px 12px;
+  }
+}
+@media (max-width: 1023px) {
+  .weekday__item {
+    padding: 4px 10px;
+  }
+}
 .weekday__item:hover {
   background-blend-mode: darken;
 }
 .weekday__item--active {
   padding: 8px 32px;
+}
+@media (max-width: 1320px) {
+  .weekday__item--active {
+    padding: 6px 18px;
+  }
+}
+@media (max-width: 1023px) {
+  .weekday__item--active {
+    padding: 6px 14px;
+  }
 }
 .weekday__item--sunday {
   background-color: #FF6666;
@@ -433,6 +510,11 @@ body {
 .weekday__item--saturday:hover {
   background-color: #E65CBE;
 }
+@media (max-width: 1023px) {
+  .weekday__text {
+    display: none;
+  }
+}
 
 .header {
   display: flex;
@@ -444,11 +526,27 @@ body {
   margin-bottom: 22px;
   box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
 }
+@media (max-width: 1023px) {
+  .header {
+    padding: 8px;
+    padding-left: 0;
+  }
+}
 .header__appName {
   width: 588px;
   background-color: #6688FF;
   padding: 0.625rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
+}
+@media (max-width: 1320px) {
+  .header__appName {
+    width: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .header__appName {
+    padding: 1rem 1.5rem;
+  }
 }
 .header__title {
   font-family: "Poppins", sans-serif;
@@ -462,6 +560,20 @@ body {
   color: #FFFFFF;
   font-weight: 400;
 }
+.header__btnGroup {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 1320px) {
+  .header__btnGroup {
+    gap: 4px;
+  }
+}
+@media (max-width: 1023px) {
+  .header__btnGroup {
+    flex-direction: column;
+  }
+}
 .header__time {
   display: flex;
   flex-direction: column;
@@ -473,11 +585,21 @@ body {
   color: #3B3E45;
   font-weight: 400;
 }
+@media (max-width: 1023px) {
+  .header__hour {
+    font-size: 2rem;
+  }
+}
 .header__date {
   font-family: "Poppins", sans-serif;
   font-size: 1.25rem;
   color: #3B3E45;
   font-weight: 400;
+}
+@media (max-width: 1023px) {
+  .header__date {
+    font-size: 1rem;
+  }
 }
 
 .main {
@@ -510,6 +632,11 @@ body {
   margin-left: 20px;
   display: flex;
   gap: 24px;
+}
+@media (max-width: 1023px) {
+  .form {
+    gap: 12px;
+  }
 }
 
 .board {
