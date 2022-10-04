@@ -77,7 +77,7 @@ body {
   transition: background-color 0.3s;
   cursor: pointer;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .button__text {
     display: none;
   }
@@ -85,7 +85,7 @@ body {
 .button i {
   margin-right: 4px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .button i {
     margin: 0;
   }
@@ -94,7 +94,7 @@ body {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .button--large {
     padding: 1rem;
   }
@@ -442,6 +442,11 @@ body {
     padding: 4px 12px;
   }
 }
+@media (max-width: 1023px) {
+  .weekday__item {
+    padding: 4px 10px;
+  }
+}
 .weekday__item:hover {
   background-blend-mode: darken;
 }
@@ -451,6 +456,11 @@ body {
 @media (max-width: 1320px) {
   .weekday__item--active {
     padding: 6px 18px;
+  }
+}
+@media (max-width: 1023px) {
+  .weekday__item--active {
+    padding: 6px 14px;
   }
 }
 .weekday__item--sunday {
@@ -494,6 +504,11 @@ body {
 }
 .weekday__item--saturday:hover {
   background-color: #E65CBE;
+}
+@media (max-width: 1023px) {
+  .weekday__text {
+    display: none;
+  }
 }
 
 .header {
@@ -587,7 +602,7 @@ body {
   display: flex;
   gap: 24px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .form {
     gap: 12px;
   }

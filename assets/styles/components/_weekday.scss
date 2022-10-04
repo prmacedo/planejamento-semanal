@@ -17,6 +17,10 @@
       padding: 4px 12px;
     }
 
+    @include breakpoint(tablet) {
+      padding: 4px 10px;
+    }
+
     cursor: pointer;
 
     transition: 0.3s;
@@ -30,6 +34,10 @@
 
       @include breakpoint(laptop) {
         padding: 6px 18px;
+      }
+
+      @include breakpoint(tablet) {
+        padding: 6px 14px;
       }
     }
 
@@ -80,6 +88,12 @@
       &:hover {
         background-color: $saturday-hover;
       }
+    }
+  }
+
+  &__text {
+    @include breakpoint(tablet) {
+      display: none;
     }
   }
 }
