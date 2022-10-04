@@ -68,7 +68,7 @@
         top: calc(25% + 10px);
         left: 16px;
 
-        width: 95vw;
+        width: calc(100vw - 36px - 24px - 16px - 8px); // 100vw - paddings - margins - scrollbar
         height: 4px;
         border-radius: 2px;
         background-color: $conflict-line;

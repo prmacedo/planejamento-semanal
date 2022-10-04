@@ -261,7 +261,7 @@ body {
   z-index: 1;
   top: calc(25% + 10px);
   left: 16px;
-  width: 95vw;
+  width: calc(100vw - 36px - 24px - 16px - 8px);
   height: 4px;
   border-radius: 2px;
   background-color: #FF6D6D;
