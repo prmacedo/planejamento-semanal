@@ -348,6 +348,12 @@ body {
   grid-template-columns: auto 1fr auto;
   box-sizing: border-box;
 }
+@media (max-width: 1023px) {
+  .schedule__item {
+    width: 60%;
+    max-width: 400px;
+  }
+}
 .schedule__item::before {
   content: "";
   width: 14px;

@@ -40,6 +40,11 @@
 
     box-sizing: border-box;
 
+    @include breakpoint(tablet) {
+      width: 60%;
+      max-width: 400px;
+    }
+
     &::before {
       content: '';
       width: 14px;
