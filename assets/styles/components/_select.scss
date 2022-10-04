@@ -9,6 +9,9 @@
 
     box-sizing: border-box;
     cursor: pointer;
+
+    height: 100%;
+    display: flex;
   }
 
   &--weekday {
@@ -29,6 +32,7 @@
 
   &__text {
     @include text-style($poppins, 0.875rem, $input-text-color, 400, 1.25rem);
+    align-self: center;
 
     &--time {
       border: none;
@@ -45,6 +49,7 @@
     font-size: 0.75rem;
     color: $gray;
     margin-left: 8px;
+    align-self: center;
   }
 
   &__options {
