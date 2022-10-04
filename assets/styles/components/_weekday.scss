@@ -29,6 +29,13 @@
       background-blend-mode: darken;
     }
 
+    &::after {
+      content: "-Feira";
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
+
     &--active {
       padding: 8px 32px;
 
@@ -45,6 +52,9 @@
       background-color: $sunday;
       &:hover {
         background-color: $sunday-hover;
+      }
+      &::after {
+        content: "";
       }
     }
 
@@ -88,12 +98,9 @@
       &:hover {
         background-color: $saturday-hover;
       }
-    }
-  }
-
-  &__text {
-    @include breakpoint(tablet) {
-      display: none;
+      &::after {
+        content: "";
+      }
     }
   }
 }

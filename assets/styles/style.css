@@ -455,6 +455,14 @@ body {
 .weekday__item:hover {
   background-blend-mode: darken;
 }
+.weekday__item::after {
+  content: "-Feira";
+}
+@media (max-width: 1023px) {
+  .weekday__item::after {
+    display: none;
+  }
+}
 .weekday__item--active {
   padding: 8px 32px;
 }
@@ -473,6 +481,9 @@ body {
 }
 .weekday__item--sunday:hover {
   background-color: #E65C5C;
+}
+.weekday__item--sunday::after {
+  content: "";
 }
 .weekday__item--monday {
   background-color: #FFA246;
@@ -510,10 +521,8 @@ body {
 .weekday__item--saturday:hover {
   background-color: #E65CBE;
 }
-@media (max-width: 1023px) {
-  .weekday__text {
-    display: none;
-  }
+.weekday__item--saturday::after {
+  content: "";
 }
 
 .header {
