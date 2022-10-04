@@ -1,0 +1,10 @@
+.form {
+  margin-left: 20px;
+
+  display: flex;
+  gap: 24px;
+
+  @include breakpoint(tablet) {
+    gap: 12px;
+  }
+}

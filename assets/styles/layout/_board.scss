@@ -1,0 +1,12 @@
+.board {
+  display: grid;
+  grid-template-columns: 5.3125rem 1fr;
+  grid-template-rows: 2.25rem 1fr;
+  grid-template-areas:
+  'time weekday'
+  'time schedule';
+  gap: 16px;
+
+  padding: 1rem;
+  padding-right: 0.5rem;
+}

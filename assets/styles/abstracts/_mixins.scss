@@ -1,0 +1,21 @@
+@mixin text-style($family: false, $size: false, $color: false, $weight: false, $lh: false) {
+  @if $family { font-family: $family; }
+  @if $size { font-size: $size; }
+  @if $color { color: $color; }
+  @if $weight { font-weight: $weight; }
+  @if $lh { line-height: $lh; }
+}
+
+@mixin breakpoint($point) {
+  @if $point == laptop {
+    @media (max-width: 1320px) {
+      @content;
+    }
+  }
+
+  @else if $point == tablet {
+    @media (max-width: 1023px) {
+      @content;
+    }
+  }
+}

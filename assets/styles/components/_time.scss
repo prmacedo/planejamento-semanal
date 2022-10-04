@@ -1,0 +1,106 @@
+.time {
+  grid-area: time;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__title {
+    @include text-style($noto-sans, 1.0625rem, $input-text-color, 400);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 4.6875rem;
+
+    background-color: $white;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: $shadow;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 5.3125rem;
+    background-color: $white;
+
+    border-bottom: 1px solid $light-gray;
+    border-radius: 10px;
+
+    box-shadow: $shadow;
+    box-sizing: border-box;
+
+    &:first-of-type {
+      font-family: $noto-sans;
+      height: 4.6875rem;
+      border: none;
+    }
+
+    &--conflict {
+      background-color: rgba($color: $conflict, $alpha: 0.4);
+      position: relative;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 25%;
+        left: 4px;
+
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $conflict-line;
+      }
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        z-index: 1;
+        top: calc(25% + 10px);
+        left: 16px;
+
+        width: calc(100vw - 36px - 24px - 16px - 8px); // 100vw - paddings - margins - scrollbar
+        height: 4px;
+        border-radius: 2px;
+        background-color: $conflict-line;
+      }
+    }
+
+    &--sunday {
+      background-color: rgba($color: $sunday, $alpha: 0.4);
+    }
+
+    &--monday {
+      background-color: rgba($color: $monday, $alpha: 0.4);
+    }
+
+    &--tuesday {
+      background-color: rgba($color: $tuesday, $alpha: 0.4);
+    }
+
+    &--wednesday {
+      background-color: rgba($color: $wednesday, $alpha: 0.4);
+    }
+
+    &--thursday {
+      background-color: rgba($color: $thursday, $alpha: 0.4);
+    }
+
+    &--friday {
+      background-color: rgba($color: $friday, $alpha: 0.4);
+    }
+
+    &--saturday {
+      background-color: rgba($color: $saturday, $alpha: 0.4);
+    }
+  }
+}

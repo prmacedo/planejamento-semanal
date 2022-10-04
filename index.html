@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Planejamento Semanal</title>
+
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Nunito&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body id="home">
+  <header class="header">
+    <div class="header__appName">
+      <h1 class="header__title">Planejamento Semanal</h1>
+      <p class="header__subtitle">Utilize o formulário para adicionar novas tarefas:</p>
+    </div>
+
+    <div class="header__btnGroup">
+      <button class="button button--green js-saveLocalStorage">Salvar localStorage</button>
+      <button class="button button--red js-deleteLocalStorage">Excluir localStorage</button>
+    </div>
+
+    <div class="header__time js-clock">
+      <time class="header__hour js-clock__hour">10:58</time>
+      <time class="header__date js-clock__date">27 de Setembro de 2022</time>
+    </div>
+  </header>
+
+  <main class="main">
+    <form class="form">
+      <input type="text" name="activity" class="input input--activity js-formActivity" placeholder="Atividade">
+
+      <input type="hidden" name="weekday" class="js-formWeekday" value="0">
+
+      <div class="select select--weekday js-weekdaySelect">
+        <div class="select__field js-selectField">
+          <span class="select__text js-selectText">Domingo</span>
+          <i class="fa-solid fa-chevron-down select__icon"></i>
+        </div>
+
+        <ol class="select__options select__options--hidden js-selectOption">
+          <li data-day="0" class="select__item js-selectItem">Domingo</li>
+          <li data-day="1" class="select__item js-selectItem">Segunda-Feira</li>
+          <li data-day="2" class="select__item js-selectItem">Terça-Feira</li>
+          <li data-day="3" class="select__item js-selectItem">Quarta-Feira</li>
+          <li data-day="4" class="select__item js-selectItem">Quinta-Feira</li>
+          <li data-day="5" class="select__item js-selectItem">Sexta-Feira</li>
+          <li data-day="6" class="select__item js-selectItem">Sábado</li>
+        </ol>
+      </div>
+
+      <input type="hidden" name="time" class="js-formTime" value="00h00m">
+
+      <div class="select select--time js-timeSelect">
+        <div class="select__field js-selectField">
+          <span class="select__text js-selectText">00h</span>
+          <input type="text" value="00" class="select__text select__text--time js-selectInput">
+          <span class="select__text">m</span>
+          <i class="fa-solid fa-chevron-down select__icon"></i>
+        </div>
+
+        <ol class="select__options select__options--time select__options--hidden js-selectOption">
+          <li class="select__item js-selectItem">00h</li>
+          <li class="select__item js-selectItem">01h</li>
+          <li class="select__item js-selectItem">02h</li>
+          <li class="select__item js-selectItem">03h</li>
+          <li class="select__item js-selectItem">04h</li>
+          <li class="select__item js-selectItem">05h</li>
+          <li class="select__item js-selectItem">06h</li>
+          <li class="select__item js-selectItem">07h</li>
+          <li class="select__item js-selectItem">08h</li>
+          <li class="select__item js-selectItem">09h</li>
+          <li class="select__item js-selectItem">10h</li>
+          <li class="select__item js-selectItem">11h</li>
+          <li class="select__item js-selectItem">12h</li>
+          <li class="select__item js-selectItem">13h</li>
+          <li class="select__item js-selectItem">14h</li>
+          <li class="select__item js-selectItem">15h</li>
+          <li class="select__item js-selectItem">16h</li>
+          <li class="select__item js-selectItem">17h</li>
+          <li class="select__item js-selectItem">18h</li>
+          <li class="select__item js-selectItem">19h</li>
+          <li class="select__item js-selectItem">20h</li>
+          <li class="select__item js-selectItem">21h</li>
+          <li class="select__item js-selectItem">22h</li>
+          <li class="select__item js-selectItem">23h</li>
+        </ol>
+      </div>
+
+      <button class="button button--green button--large js-submit" type="submit" title="Adicionar Atividade">
+        <i class="fa-solid fa-plus" aria-label="Adicionar Atividade"></i>
+        <span class="button__text">Adicionar Atividade</span>
+      </button>
+
+      <button class="button button--red button--large js-deleteAll" type="button" title="Excluir Todos">
+        <i class="fa-solid fa-minus" aria-label="Excluir Todos"></i>
+        <span class="button__text">Excluir Todos</span>
+      </button>
+    </form>
+
+    <div class="board">
+      <ol class="time js-time">
+        <li class="time__title">Horário</li>
+      </ol>
+
+      <ol class="weekday">
+        <li data-day="1" title="Segunda-Feira" class="js-weekday__item weekday__item weekday__item--monday">Segunda</li>
+        <li data-day="2" title="Terça-Feira" class="js-weekday__item weekday__item weekday__item--tuesday">Terça</li>
+        <li data-day="3" title="Quarta-Feira" class="js-weekday__item weekday__item weekday__item--wednesday">Quarta</li>
+        <li data-day="4" title="Quinta-Feira" class="js-weekday__item weekday__item weekday__item--thursday">Quinta</li>
+        <li data-day="5" title="Sexta-Feira" class="js-weekday__item weekday__item weekday__item--friday">Sexta</li>
+        <li data-day="6" title="Sábado" class="js-weekday__item weekday__item weekday__item--saturday">Sábado</li>
+        <li data-day="0" title="Domingo" class="js-weekday__item weekday__item weekday__item--sunday">Domingo</li>
+      </ol>
+
+      <div class="schedule js-schedule"></div>
+    </div>
+  </main>
+
+  <script type="module" src="./assets/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.button {
+  @include text-style($nunito, 1.0625rem, $white);
+
+  border: none;
+  border-radius: 0.625rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.625rem 1rem;
+
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  @include breakpoint(tablet) {
+    padding: 0.25rem 1rem;
+  }
+
+  &__text {
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  i {
+    margin-right: 4px;
+    @include breakpoint(tablet) {
+      margin: 0;
+    }
+  }
+
+  &--large {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @include breakpoint(tablet) {
+      padding: 1rem;
+    }
+  }
+
+  &--green {
+    background-color: $green;
+    &:hover {
+      background-color: $green-hover;
+    }
+  }
+
+  &--red {
+    background-color: $red;
+    &:hover {
+      background-color: $red-hover;
+    }
+  }
+
+  &--darkred {
+    @include text-style($nunito, 0.875rem, $white);
+    background-color: $darkred;
+    padding: 0.25rem;
+    border-radius: 4px;
+    margin: 6px 6px 0 0;
+
+    &:hover {
+      background-color: $darkred-hover;
+    }
+  }
+}
