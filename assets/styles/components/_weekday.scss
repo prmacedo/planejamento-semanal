@@ -12,6 +12,11 @@
     border-radius: 8px 8px 0 0;
     box-shadow: $shadow;
 
+    @include breakpoint(laptop) {
+      font-size: 1rem;
+      padding: 4px 12px;
+    }
+
     cursor: pointer;
 
     transition: 0.3s;
@@ -22,6 +27,10 @@
 
     &--active {
       padding: 8px 32px;
+
+      @include breakpoint(laptop) {
+        padding: 6px 18px;
+      }
     }
 
     &--sunday {

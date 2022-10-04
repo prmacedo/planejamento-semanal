@@ -398,11 +398,22 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+@media (max-width: 1320px) {
+  .weekday__item {
+    font-size: 1rem;
+    padding: 4px 12px;
+  }
+}
 .weekday__item:hover {
   background-blend-mode: darken;
 }
 .weekday__item--active {
   padding: 8px 32px;
+}
+@media (max-width: 1320px) {
+  .weekday__item--active {
+    padding: 6px 18px;
+  }
 }
 .weekday__item--sunday {
   background-color: #FF6666;
