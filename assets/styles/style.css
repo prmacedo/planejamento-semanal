@@ -162,6 +162,8 @@ body {
   border: 1px solid #2CBE82;
   box-sizing: border-box;
   cursor: pointer;
+  height: 100%;
+  display: flex;
 }
 .select--weekday {
   width: 100%;
@@ -182,6 +184,7 @@ body {
   color: #3B3E45;
   font-weight: 400;
   line-height: 1.25rem;
+  align-self: center;
 }
 .select__text--time {
   border: none;
@@ -196,6 +199,7 @@ body {
   font-size: 0.75rem;
   color: #666E7D;
   margin-left: 8px;
+  align-self: center;
 }
 .select__options {
   position: absolute;
@@ -343,6 +347,12 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto;
   box-sizing: border-box;
+}
+@media (max-width: 1023px) {
+  .schedule__item {
+    width: 60%;
+    max-width: 400px;
+  }
 }
 .schedule__item::before {
   content: "";
